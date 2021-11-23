@@ -1,0 +1,22 @@
+<svg id="_2993685_brand_brands_google_logo_logos_icon" data-name="2993685_brand_brands_google_logo_logos_icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+    <defs>
+        <linearGradient id="linear-gradient" y1=".5" x2="1" y2=".5" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#fff" stop-opacity=".2"/>
+            <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <style>
+            .cls-5{opacity:.1}.cls-7{fill:#fff;opacity:.2}
+        </style>
+    </defs>
+    <path id="Path_9167" data-name="Path 9167" d="M12 5a6.962 6.962 0 0 1 4.286 1.474L19.923 3A11.977 11.977 0 0 0 1.386 6.41L5.43 9.6A7 7 0 0 1 12 5z" style="fill:#f44336"/>
+    <path id="Path_9168" data-name="Path 9168" d="M23.9 13.5A11.9 11.9 0 0 0 24 12a12.035 12.035 0 0 0-.265-2.5H12v5h6.486a7.072 7.072 0 0 1-2.648 3.319l4.059 3.2A11.987 11.987 0 0 0 23.9 13.5z" style="fill:#2196f3"/>
+    <path id="Path_9169" data-name="Path 9169" d="M5 12a6.971 6.971 0 0 1 .43-2.4L1.386 6.41a11.958 11.958 0 0 0-.028 11.123l4.05-3.2A6.972 6.972 0 0 1 5 12z" style="fill:#ffc107"/>
+    <path id="Path_9170" data-name="Path 9170" d="M12 19a7 7 0 0 1-6.592-4.664l-4.05 3.2A11.981 11.981 0 0 0 19.9 21.024l-4.059-3.2A6.831 6.831 0 0 1 12 19z" style="fill:#00b060"/>
+    <path id="Path_9171" data-name="Path 9171" class="cls-5" d="M12 23.75a12.416 12.416 0 0 1-8.952-3.779 11.959 11.959 0 0 0 17.841.069A12.406 12.406 0 0 1 12 23.75z"/>
+    <path id="Path_9172" data-name="Path 9172" class="cls-5" d="M12 14.25v.25h6.486l.1-.25z"/>
+    <path id="Path_9173" data-name="Path 9173" d="M23.994 12.147c0-.049.006-.1.006-.147v-.041c0 .063-.006.125-.006.188z" style="fill:#e6e6e6"/>
+    <path id="Path_9174" data-name="Path 9174" class="cls-7" d="M12 9.5v.25h11.786a18.413 18.413 0 0 0-.05-.25z"/>
+    <path id="Path_9175" data-name="Path 9175" d="M23.735 9.5H12v5h6.486a6.991 6.991 0 1 1-2.7-8.359c.168.109.34.211.5.333L19.923 3l-.082-.063A11.95 11.95 0 1 0 23.735 9.5z" style="fill:url(#linear-gradient)"/>
+    <path id="Path_9176" data-name="Path 9176" class="cls-5" d="M15.789 5.891A6.968 6.968 0 0 0 5 11.75v.117a6.968 6.968 0 0 1 10.789-5.726c.168.109.34.211.5.333L19.923 3l-3.637 3.22c-.157-.12-.33-.22-.497-.329z"/>
+    <path id="Path_9177" data-name="Path 9177" class="cls-7" d="M12 .25a11.924 11.924 0 0 1 7.779 2.892L19.923 3l-.11-.1A11.829 11.829 0 0 0 12 0 12 12 0 0 0 0 12c0 .042.006.083.006.125A12 12 0 0 1 12 .25z"/>
+</svg>

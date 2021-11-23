@@ -1,0 +1,18 @@
+<div class="popupform" fxLayout="column" fxFlex="100">
+  <mat-toolbar style="background-color: #ffffff;">
+      <span style="color: #202020;margin: auto;">Message</span>
+      <img  (click)="dialogRef.close()" style="cursor: pointer;" src="assets/images/Group 7779.svg">
+  </mat-toolbar>
+  
+  <div fxFlex="100" fxLayout="column" style="padding-left: 3%;padding-right: 3%;width: 100%;overflow: auto;margin-top: 5%;margin-bottom: 5%;">
+    <div fxFlex="20">
+      <b><u>{{givenby}}:</u></b>
+    </div>
+    <div fxFlex="80">
+      {{remarks}}
+    </div>
+      
+          
+  </div>
+  
+</div>

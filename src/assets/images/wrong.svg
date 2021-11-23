@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+    <defs>
+        <style>
+            .cls-6{fill:#05863f}.cls-7{fill:#00ba53}
+        </style>
+    </defs>
+    <g id="Group_7670" transform="translate(-1601 -117)">
+        <circle id="Ellipse_49" cx="18" cy="18" r="18" fill="#fff" opacity="0.1" transform="translate(1601 117)"/>
+        <g id="_497738" transform="translate(1609.186 110.906)">
+            <path id="Path_6237" fill="#4c7a8b" d="M19.714 29.307L12.6 16.239a2.954 2.954 0 0 0-5.072 0L.414 29.307a2.945 2.945 0 0 0-.024 2.972 2.91 2.91 0 0 0 2.56 1.486h14.229a2.91 2.91 0 0 0 2.559-1.486 2.945 2.945 0 0 0-.024-2.972z"/>
+            <path id="Path_6238" fill="#426572" d="M265.674 32.279a2.91 2.91 0 0 1-2.559 1.486H256V14.8a2.944 2.944 0 0 1 2.536 1.439l7.114 13.068a2.945 2.945 0 0 1 .024 2.972z" transform="translate(-245.936)"/>
+            <path id="Path_6239" fill="#fff" d="M47.82 58.965l-7.235-13.29a1.8 1.8 0 0 0-3.094 0l-7.235 13.29a1.807 1.807 0 0 0 1.544 2.723h14.47a1.807 1.807 0 0 0 1.547-2.723z" transform="translate(-28.973 -28.961)"/>
+            <path id="Path_6240" fill="#e7e7e7" d="M264.794 60.776a1.77 1.77 0 0 1-1.559.912H256V44.8a1.781 1.781 0 0 1 1.547.876l7.235 13.29a1.782 1.782 0 0 1 .012 1.81z" transform="translate(-245.936 -28.961)"/>
+            <g id="Group_7652" transform="translate(8.885 19.612)">
+                <path id="Path_6241" d="M227.179 379.559a1.179 1.179 0 1 1 1.179-1.179 1.181 1.181 0 0 1-1.179 1.179z" class="cls-6" transform="translate(-226 -367.765)"/>
+                <path id="Path_6242" d="M228.359 144.277a1.179 1.179 0 1 1-2.359 0v-5.9a1.179 1.179 0 0 1 2.359 0z" class="cls-6" transform="translate(-226 -137.2)"/>
+            </g>
+            <g id="Group_7653" transform="translate(10.064 19.612)">
+                <path id="Path_6243" d="M257.179 378.379A1.181 1.181 0 0 0 256 377.2v2.359a1.181 1.181 0 0 0 1.179-1.18z" class="cls-7" transform="translate(-256 -367.765)"/>
+                <path id="Path_6244" d="M257.179 144.277v-5.9A1.181 1.181 0 0 0 256 137.2v8.256a1.181 1.181 0 0 0 1.179-1.179z" class="cls-7" transform="translate(-256 -137.2)"/>
+            </g>
+        </g>
+    </g>
+</svg>

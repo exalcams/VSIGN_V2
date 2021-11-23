@@ -1,0 +1,61 @@
+<div class="role">
+    <div fxLayout="row" fxLayoutAlign="start start" class="page">
+        <div class="left_side">
+            <div fxLayout="column" fxLayoutAlign="start center" style="margin-top: 1rem;">
+                <div fxLayout="row" fxLayoutAlign="center center" class="searchbar">
+                    <input [(ngModel)]="searchText" class="inputfield" placeholder="Search" style="margin-left: 0.5rem;">
+                </div>
+                <mat-selection-list [multiple]="false" [disableRipple]="true" #mdevices
+                    style="width: 100%;margin-bottom: 1.5rem;" class="matlist">
+                    <mat-list-option class="cards" *ngFor="let item  of AllRoles  | filter: searchText;index as i"
+                        [selected]="selectID==item.RoleID" (click)="loadSelectedRole(item)">
+                        <div style="width: 100%;height: 100%;padding-left: 3%;" fxLayout="column"
+                            fxLayoutAlign="center start">
+                            <div fxLayout="row" fxLayoutAlign="space-between center" style="width: 100%;">
+                                <span style="font-weight: 500;
+                            letter-spacing: 0.5px;font-size: 13px;">{{item.RoleName}}</span>
+                                <!-- <span style="font-size: 14px;">{{item.createdOn | date:'dd/MM/yyyy'}}</span> -->
+                            </div>
+                        </div>
+                    </mat-list-option>
+                </mat-selection-list>
+            </div>
+        </div>
+        <div class="right_side">
+            <div style="width: 100%;height: 90%;overflow: auto;">
+                <form [formGroup]="roleMainFormGroup">
+                    <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="16px" style="padding: 0 32px;">
+                        <mat-form-field class="form_field">
+                            <mat-label>Role Name</mat-label>
+                            <input matInput autocomplete="off" formControlName="roleName">
+                            <mat-error
+                                *ngIf="roleMainFormGroup.get('roleName').touched && roleMainFormGroup.get('roleName').hasError('required')">
+                                Role Name required</mat-error>
+                        </mat-form-field>
+                        <mat-form-field class="form_field">
+                            <mat-select placeholder="App Name" formControlName="appIDList" multiple
+                                (selectionChange)="OnAppNameChanged()">
+                                <mat-option *ngFor="let mp of AllMenuApps" [value]="mp.AppID">
+                                    {{mp.AppName}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error
+                                *ngIf="roleMainFormGroup.get('appIDList').touched && roleMainFormGroup.get('appIDList').hasError('required')">
+                                App Name required</mat-error>
+                        </mat-form-field>
+                    </div>
+                </form>
+            </div>
+            <button mat-fab color="primary" (click)="ResetControl()" class="add-fab-btn">
+                <mat-icon>add</mat-icon>
+            </button>
+            <div class="footer" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="16px">
+                <button *ngIf="selectedRole?.RoleID" class="foo_button1" mat-raised-button
+                    (click)="DeleteClicked()">Delete</button>
+                <button class="foo_button2" mat-raised-button
+                    (click)="SaveClicked()">{{selectedRole.RoleID?'Update':'Create'}}</button>
+                <button (click)="ResetControl()" *ngIf="!selectedRole.RoleID" class="foo_button1" mat-raised-button>Clear</button>
+            </div>
+        </div>
+    </div>
+</div>

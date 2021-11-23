@@ -1,0 +1,128 @@
+<div id="login" class="inner-scroll normal" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="50px">
+
+    <!-- <div id="login-intro" fxFlex fxHide fxShow.gt-xs>
+
+    </div> -->
+
+    <div id="login-form-wrapper" fusePerfectScrollbar>
+
+        <div id="login-form">
+            <div class="logo" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+                <!-- <img src="assets/images/rfq/Exalca_Logo.jpg" width="100px"> -->
+                <span class="welcomespan"> WELCOME TO </span>
+                <img src="../../assets\Group 8232.png" style="width: 100px;height: 35px;">
+            </div>
+            <div class="title">Sign In</div>
+            <!-- <div class="border"></div> -->
+
+            <div class="subTitel">Please Sign In to Continue</div>
+
+            <form name="loginForm" [formGroup]="loginForm" novalidate (ngSubmit)="LoginClicked()">
+                <!-- <div>
+                    <span class="usernamespan"> User Name</span>
+                    <mat-form-field  appearance="outline"> (ngSubmit)="onSubmit(this.loginForm.value)"
+                        <input matInput formControlName="userName">
+                        <mat-error *ngIf="loginForm.get('userName').hasError('required')">
+                            User name is required
+                        </mat-error>
+                    </mat-form-field>
+                </div> -->
+                <div fxLayout="column" fxLayoutAlign="start" fxLayoutGap="20px">
+                    <div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="8px">
+                        <span class="usernamespan"> User Name</span>
+                        <div class="inputdivision">
+                            <input autocomplete="off" matInput formControlName="userName" class="inputform "
+                                placeholder="Enter Username" required>
+
+                        </div>
+                    </div>
+                    <div fxLayout="column" fxLayoutAlign="space-between" fxLayoutGap="8px">
+                        <span class="usernamespan">Password</span>
+                        <div class="inputdivision" fxLayout="row" fxLayoutAlign="start center">
+                            <input autocomplete="off" matInput formControlName="password" class="inputform"
+                                placeholder="Enter Password" [type]="hide ? 'password' : 'text'">
+                            <!-- <mat-icon class="show" (click)="hide=!hide;">{{hide ? 'visibility' : 'visibility_off'}}
+                            </mat-icon> -->
+
+                            <img src="../../assets/38488.svg" *ngIf="hide==true" (click)="hider()" class="show">
+                            <img src="../../assets/eyeopen.svg" class="show" *ngIf="hide==false" (click)="hider2()">
+
+                        </div>
+                    </div>
+                </div>
+                <!-- <div>
+                    <span class="usernamespan">Password</span>
+                    <mat-form-field appearance="outline">
+                        <input matInput type="password" formControlName="password">
+                        <mat-error>
+                            Password is required
+                        </mat-error>
+                    </mat-form-field>
+                </div> -->
+                <!-- <div class="remember-forgot-password" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="end center">
+            <span class="forgot-password" (click)="OpenForgetPasswordLinkDialog()">
+              Forgot Password?
+            </span>
+          </div> -->
+
+
+                <div class="forgetpassworddiv" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="end center">
+                    <span class="forgetpassword">Forgot Password ?</span>
+                </div>
+                <div class="buttondiv">
+                    <button mat-raised-button class="submit-button" aria-label="LOGIN" type="submit">
+                        Log In
+                    </button>
+                </div>
+            </form>
+            <div class="choicediv">
+                <span class="choicespan">
+                    ( or ) Login with
+                </span>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-evenly" class="choicesoptiondiv">
+                <div fxLayout="row" fxLayoutAlign="start center" class="pointer">
+                    <img src="../../assets/2993685_brand_brands_google_logo_logos_icon.svg" class="imageschoice">
+                    <span class="google">Google</span>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="start center" class="pointer">
+                    <img src="../../assets/_x32_43-outlook.svg" class="imageschoice">
+                    <span class="google">Outlook</span>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center" class="signupdiv" fxLayoutGap="5px">
+                <span class="newto">
+                    New to V Sign
+                </span>
+                <!-- <img src="../../assets/Group 8575.png" width="55px"> -->
+                <span class="signupdiv2">
+                    Please,
+                </span>
+                <span class="signupdiv3">
+                    Sign Up
+                </span>
+            </div>
+
+            <!-- <mat-progress-spinner *ngIf="IsProgressBarVisibile" class="ProgressBarPostion" color="accent"
+          mode="indeterminate"></mat-progress-spinner> -->
+        </div>
+
+
+    </div>
+    <div id="login-intro" fxFlex fxHide fxShow.gt-xs fxFlex="50">
+        <div fxLayout="column" fxLayoutAlign="center" style="width: 100%;">
+
+
+            <div>
+                <div fxLayout="row" fxLayoutAlign="center center" class="finaldiv" fxLayoutGap="5px">
+                    <span class="powerdbyspan">
+                        Powered by
+                    </span>
+                    <img src="../../assets/Group 8319 (1).svg" width="100px" height="20px">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<app-loader></app-loader>

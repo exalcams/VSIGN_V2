@@ -1,0 +1,164 @@
+.popupform{
+    height: 500px;
+    width: 450px;
+    padding-bottom: 1rem;
+    display: flex;
+    border-radius: 2%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown_second {
+    font-size: small;
+    width: 100%;
+    font-weight: 600;
+
+}
+.mat-dialog-container {
+    padding: 0;
+    border-radius: 0px;
+  }
+
+.mainselect1 {
+    height: 36px;
+    position: relative;
+    border-radius: 4px;
+    border: solid 2px #c3c3c3;
+    background-color: #ffffff;
+}
+.creat1{
+    cursor: pointer;
+    width: 75%;
+  }
+
+.searchbar1 {
+    border: solid 2px #c3c3c3;
+    background-color: #ffffff;
+    height: 35px;
+    width: 35px;
+    position: relative;
+    margin-left: 20px;
+    border-radius: 4px;
+    margin-top: -2px;
+}
+
+.inputfield {
+    width: 100%;
+    border: none;
+    outline: none;
+    
+    font-size: 14px;
+    font-family: unset;
+    color: #000000b3;
+}
+
+.box2 {
+    width: 168px;
+    // border: solid 2px rgba(0, 0, 0, 0.16);
+    background-color: #0e82fb;
+    height: 4rem;
+    border-radius: 4px;
+    // border-bottom: 8px solid #ef8377;
+    // border-color: #ef8377;
+    // position: relative;
+    // bottom: 40px;
+}
+
+.doc1 {
+    margin-left: 15px;
+    color: white;
+}
+
+.doc {
+    margin-left: 15px;
+    margin-top: 10px;
+    color: white !important;
+}
+
+.txt_onpage {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.txt_ontag {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.txt_oncursor {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.txt_first {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.txt_last {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.txt_allpages {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.txt_sign {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.txt_useaadhar {
+    margin-top: 3%;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.txt_useusb {
+    margin-top: 3%;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.txt_service {
+    margin-top: 3%;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.txt_signalldoc {
+    margin-left: 2%;
+    margin-top: 3%;
+    font-weight: 500;
+}
+.text_rem {
+    position: relative;
+    top: 18px;
+    opacity: 0.7;
+    // margin-top: -12px;
+    margin-left: 19px;
+    font-size: 13px;
+    font-weight: 600;
+}
+.remarks {
+    border-radius: 4px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 20rem;
+    margin-left: 2rem;
+    border: solid 2px #c3c3c3;
+    background-color: #ffffff;
+}
+.inputfield1 {
+    padding: 0px 0px 71px;
+    margin-bottom: 0px;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-family: unset;
+    color: #000000b3;
+    font-weight: bold;
+}

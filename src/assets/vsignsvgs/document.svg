@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18.421" height="26.795" viewBox="0 0 18.421 26.795">
+    <defs>
+        <style>
+            .cls-2{fill:#fff}
+        </style>
+    </defs>
+    <g id="document" opacity="0.4" transform="translate(6.331)">
+        <path id="Subtraction_2" d="M18.421 23.446H0V5.514L5.514 0h7.841a2.286 2.286 0 0 1 .045.419v10.466a.837.837 0 0 1-1.675 0V3.35h-1.677v7.536a2.512 2.512 0 1 0 5.024 0V.419A3.327 3.327 0 0 0 15.046 0h3.375v23.445zM1.675 10.048v1.674H3.35v-1.673zm0-3.35v1.676H3.35V6.7z" class="cls-2" transform="translate(-6.331 3.349)"/>
+        <path id="Path_1039" fill="#c4c4c4" d="M.758 81.719l-5.371 5.371H.758zm0 0" transform="translate(-1.647 -78.297)"/>
+        <path id="Path_1043" d="M180.06 3.349a2.094 2.094 0 0 0-4.1 0h-1.692a3.766 3.766 0 0 1 7.486 0c.026-.03-1.708-.008-1.694 0z" class="cls-2" transform="translate(-173.036)"/>
+    </g>
+</svg>

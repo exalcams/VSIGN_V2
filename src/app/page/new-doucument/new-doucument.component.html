@@ -1,0 +1,362 @@
+<div fxLayout="column" style="width: 100%;background-color: #ffffff">
+  <mat-toolbar style="background-color: #ffffff;border: none !important;">
+
+    <div fxFlex fxFill fxLayout="row" fxLayoutAlign="start center">
+      <div class=" my-8" fxFlex="1 0 auto" fxLayout="column" fxLayoutAlign="start start"
+        style="margin-top: 20px !important;">
+        <!-- <span class="digisign">Digital Signature</span>  -->
+        <img style="margin-left: 10px;" src="assets/images/Group 8208.svg">
+        <span class="doc-center" (click)="Router()">Document Center <span class="doc-center">: New
+            Document</span> </span>
+      </div>
+    </div>
+
+  </mat-toolbar>
+  <br>
+  <div fxFlex="100" fxLayout="row">
+    <div fxFlex="4"> </div>
+    <div fxLayout="column" fxFlex="33">
+      <div fxLayout="row" fxLayoutAlign="center center" style="margin-bottom: 20px;gap: 15px;">
+        <img src="assets/images/No1.svg">
+        Details
+      </div>
+
+      <div class="titlediv" fxLayout="row" fxLayoutGap="20px">
+        <mat-label class="titletxt">TITLE</mat-label>
+        <input class="loremtxt" [formControl]="Title" style="font-weight: bold;">
+      </div>
+
+      <mat-form-field appearance="outline" class="remarktxt">
+        <mat-label>Remarks</mat-label>
+        <textarea matInput style="height: 70px;" [formControl]="remark"></textarea>
+      </mat-form-field>
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label class="label1">Due Date</mat-label>
+        <input class="input" matInput [matDatepicker]="picker" [formControl]="dueDate" [min]="minDate"
+          placeholder="Enter Due Date" readonly>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <div *ngIf="dueDate.hasError('required') && dueDate.touched"
+        style="color: red;margin-top: -10px; font-size: 12px;margin-left: 10px;margin-top: 10px; font-family: 'poppins-semi';">
+        DueDate is required
+      </div>
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label class="label2">Sign Type</mat-label>
+
+        <mat-select class="input" [formControl]="toppings" placeholder="Select Sign Type" multiple
+          (selectionChange)="reasonChange()" style="  font-size: 12px !important;
+          font-family: 'poppins-semi' !important;
+          font-weight: 500 !important;color: #5d4c5d;">
+          <mat-option *ngFor="let sign of toppingList" [value]="sign">
+            {{sign}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div *ngIf="toppings.touched && toppings.hasError('required')" style="color: red;margin-top: 10px;">
+        Sign Type is required
+      </div>
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label class="label3">Tag</mat-label>
+        <input class="input" matInput placeholder="Enter Tag" [formControl]="Tag">
+      </mat-form-field>
+      <div *ngIf="Tag.touched && Tag.hasError('required')" style="color: red;margin-top: 10px;">
+        Tag is required
+      </div>
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label class="label4">Reference</mat-label>
+        <mat-select [formControl]="Refctrl" class="input" placeholder="Select Referance" style="  font-size: 12px !important;
+        font-family: 'poppins-semi' !important;
+        font-weight: 500 !important;color: #5d4c5d;">
+          <mat-option *ngFor="let refs of allRefs" [value]="refs.refType">{{refs.refType}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div *ngIf="hasDropDownError1" style="color: red;margin-top: 10px;">
+        Reference is required
+      </div>
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label class="label5">Reference No</mat-label>
+        <input class="input" [formControl]="refno" matInput placeholder="1237 1890 00">
+      </mat-form-field>
+      <div *ngIf="refno.touched && refno.hasError('required')" style="color: red;margin-top: 10px;">
+        Reference No is required
+      </div>
+    </div>
+    <div fxFlex="3"></div>
+    <div fxLayout="column" fxFlex="33">
+      <div fxLayout="row" fxLayoutAlign="center center" style="margin-bottom: 20px;gap: 15px;">
+        <img src="assets/images/no2.svg">
+        Documents
+      </div>
+      <div class="drop-container drag" ngFileDrop [options]="options " (uploadOutput)="onUploadOutput($event) "
+        [uploadInput]="uploadInput " [ngClass]="{ 'is-drop-over': dragOver } ">
+        <mat-label class="attach">Attachments</mat-label>
+        <span fxLayoutAlign="center" style="color: #3f9afb;">Drag and Drop (or)
+          <div for="test" style="margin-bottom: 2%; ">
+
+            <div for="test" style="margin-bottom: 2%;">
+
+              <input type="file" id="test" #fileInput accept="application/pdf" ngFileSelect
+                (uploadOutput)="onUploadOutput($event)" multiple style="display: none" />
+              <button (click)="fileInput.click()" style="cursor: pointer;" class="upldbtn addfilebtn">Add</button>
+            </div>
+          </div>
+        </span>
+      </div>
+      <div style="margin-top: 25px;background-color: #f7f9fd;">
+        <div fxLayout="column" fxLayoutAlign="center center" style="width: 100%;margin-top: 15px">
+          <div fxLayout="row" fxLayoutAlign="start" class="addattachdiv" fxLayoutGap="20px" style="width: 100%;">
+            <img class="fileimg" src="../../assets/images/file.svg" fxFlexOffset="10">
+            <label class="addattach" style="margin-left: 10%;">Added_Attachments</label>
+          </div>
+
+
+          <div class="viewdel" fxLayoutAlign="center center">Attachments view and delete</div>
+          <table class="table" fxLayoutGap="20px">
+            <thead>
+              <tr *ngFor="let item of files1; let i=index">
+                <th (click)="openAttachmentViewDialog(i)"><img src="assets/images/view.svg"></th>
+                <th><strong>{{item.name.substr(0,7) + '...' + item.name.substr(-7)}}</strong></th>
+                <th>
+                  <mat-icon id="remove" (click)="remove(item) ">close</mat-icon>
+                </th>
+              </tr>
+            </thead>
+          </table>
+          <div fxLayoutAlign="center center" class="bluehrline"></div>
+        </div>
+
+        <span class="bluehrline1"></span>
+      </div>
+      <!-- <button mat-raised-button style="border:none;box-shadow:none;background-color: #efb577;color: white;width: 13rem; " (click)="onCreate2()">Sign Process</button> -->
+
+    </div>
+    <div fxFlex="3"></div>
+    <div fxLayout="column" fxFlex="33">
+      <div fxLayout="row" fxLayoutAlign="center center" style="margin-bottom: 20px;gap: 15px;">
+        <img src="assets/images/No3.svg">
+        Signers
+      </div>
+      <mat-card fxLayout="column" class="signdocsetting">
+        <img class="flowr" src="../../assets/images/bluebgflowr.svg">
+        <div fxLayout="row" style="margin-top: 2px;margin-left: 15px;
+        font-size: 14px;
+        font-weight: 500; " fxLayoutGap="20px">
+          <img src="assets/images/docsignature.svg">
+          <span class="docsettings">Sign Document Settings</span>
+        </div>
+        <div fxLayout="row" style=" overflow: auto;">
+
+
+          <div fxLayout="column" class="boxcard">
+            <div fxLayout="row" fxLayoutGap="15px" style="margin-top: -12px;" [formGroup]="pagesFromgroup">
+              <div fxLayout="row">
+                <p style="margin-top: 10px;font-weight: 600;">Page:</p>
+              </div>
+
+              <section class="flaradio" fxLayoutAlign="center">
+                <mat-checkbox (change)='showOptionsfirst($event)' color="primary" [checked]="pagess1" style="font-size: 12px !important;font-weight: bold;
+                  margin-right:30px;color: #acacac;">First</mat-checkbox>
+                <!-- <mat-checkbox  style="font-size: 12px !important;">Last</mat-checkbox> -->
+                <mat-checkbox (change)='showOptionsAll($event)' color="primary" [checked]="pagess"
+                  style="font-size: 12px !important;font-weight: bold;color:#acacac;">
+                  All</mat-checkbox>
+              </section>
+              <div fxLayout="row">
+                <p
+                  style="font-size: 12px; font-weight: bold;padding-left: 8px;margin-right: 15px;margin-top: 10px !important;color:#acacac;">
+                  Custom</p>
+
+                <input formControlName="Pagesfield" [(ngModel)]="custom" class="sqrbg" placeholder="No.">
+              </div>
+            </div>
+
+
+          </div>
+
+
+        </div>
+      </mat-card>
+
+      <div fxLayout="row" fxLayoutAlign="space-evenly center" class="expandCLs1" style="width: 100%;margin-top: 15px;"
+        fxLayoutGap="5px">
+        <img class="blueflowr" src="../../assets/images/flowerblue.svg">
+
+        <button mat-flat-button class="adduserbtn" tTooltipPosition='below' matTooltip="Existing User"
+          matTooltipClass="example-tooltip-red" matTooltipclass="example-tooltip-red" (click)="onCreate()">
+
+          <span style="margin-left: 10px;">Add User</span></button>
+
+
+        <button mat-flat-button matTooltipPosition='below' matTooltip="New User" matTooltipClass="example-tooltip-red"
+          matTooltipclass="example-tooltip-red" (click)="onCreatee()" class="adduserbtn">
+
+          <span style="margin-left: 10px;">New User</span></button>
+      </div>
+      <div fxLayout="column" class="expandclss">
+        <!-- <div *ngIf="!flagaddhide">
+          <div *ngIf="flagadduser" style="margin-top: 7px;">
+            <form [formGroup]="form">
+              <hr class="hr">
+              <mat-radio-group formControlName="select" class="radiogrp" fxLayout="row" fxLayoutAlign="center center"
+                fxLayoutGap="52px">
+                <mat-radio-button value="user" (click)="change('user')">User</mat-radio-button>
+              </mat-radio-group>
+
+            </form>
+          </div>
+        </div> -->
+        <!-- <div *ngIf="flagaddhide1">
+          <div *ngIf="flagadduser1" style="margin-top: 7px;">
+            <form [formGroup]="form">
+              <hr class="hr">
+
+
+            </form>
+          </div>
+        </div> -->
+        <div fxLayout="column" fxLayoutAlign="start start" [formGroup]="form">
+          <div *ngIf="flagadduser" style="width: 100%;">
+            <div *ngIf="!flagaddhide" fxLayout="column" fxLayoutAlign="start center">
+              <div fxLayout="column" style="margin-left: 7%;">
+
+                <div fxLayout="row" fxLayoutAlign="start center" class="searchbar2">
+
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>User</mat-label>
+                    <input class="input" type="text" aria-label="Number" matInput formControlName="user"
+                      [matAutocomplete]="auto">
+                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                      <mat-option *ngFor="let option of filtereduseroptions | async" [value]="option.UserName">
+                        {{option.UserName}} {{option.DisplayName}}
+                      </mat-option>
+                    </mat-autocomplete>
+                  </mat-form-field>
+
+
+                </div>
+
+
+                <div fxLayout="row" fxFlexOffset="-5" style="margin-bottom: 20px;" fxLayoutAlign="center">
+                  <button mat-flat-button class="addbtn" (click)="ontick() ">Add</button>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+          <div *ngIf="!flagadduser" style="width: 100%;">
+            <div *ngIf="flagaddhide" fxLayout="column" fxLayoutAlign="start center">
+              <div fxLayout="column" style="margin-left: 7%;">
+
+                <div fxLayout="row" fxLayoutAlign="start center" class="searchbar2">
+
+
+
+
+                </div>
+
+
+              </div>
+
+              <div *ngIf="flagadduser1" style="width: 100%;">
+                <div *ngIf="!flagaddhide1" fxLayout="column" fxLayoutAlign="start center">
+                  <div class="form-group">
+                    <mat-form-field appearance="outline">
+                      <mat-label class="text_email">User</mat-label>
+                      <input matInput type="text" class="form-control searchbar4" formControlName="user1"
+                        style="font-weight: bold;">
+
+                    </mat-form-field>
+                  </div>
+                  <div class="form-group" style="margin-top: 1%;">
+                    <mat-form-field appearance="outline">
+                      <mat-label class="text_email">Email </mat-label>
+                      <input matInput type="text" class="form-control searchbar3" style="font-weight: bold;"
+                        formControlName="email">
+
+
+                    </mat-form-field>
+                  </div>
+                  <div fxLayout="row" fxFlexOffset="-5" style="margin-bottom: 20px;" fxLayoutAlign="center">
+                    <button mat-flat-button class="addbtn" (click)="ontick1() ">Add</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div fxLayout="column" style="margin-top: -10px;">
+
+        <div cdkDropList class="example-list" [ngClass]="flagaddhide?'class2':'class1'"
+          (cdkDropListDropped)="drop($event) ">
+          <div class="example-box" *ngFor="let item of arr1; index as i " style="overflow: auto;" cdkDrag>
+
+            <section fxLayout="row " fxLayoutGap="10px ">
+
+              <img src="assets/images/face.png " class="img_all ">
+              <div fxLayout="column " fxLayoutAlign="center center ">
+                <div class="txt_prdtname ">{{item.UserName}} {{item.RoleName!='User'?item.Email:item.DisplayName}}
+                  ({{item.RoleName}})
+                  <img [style.display]="item.RoleName ==='User'?'true':'none'" class="starbadge"
+                    src="../../assets/images/starbadge.svg">
+                </div>
+
+
+                <!-- <div style="margin-left: 10px; ">{{item.RoleName}}</div> -->
+              </div>
+
+            </section>
+            <div fxLayout="row " fxLayoutAlign="end center " fxLayoutGap="5px ">
+              <!-- <mat-icon style="color: #e5e6eb;cursor: pointer;" (click)="GearDialog()">settings</mat-icon> -->
+              <img src="assets/images/minus.svg " style="width: 15px;height: 15px;cursor: pointer; "
+                (click)="removeItem(i) ">
+              <img class="corner1" src="../../assets/images/Change.svg" style=" cursor: move;" cdkDragHandle>
+              <!-- <div style=" cursor: move;background-color: black; " cdkDragHandle>
+                <div class="smline1 "></div>
+                <div class="smline2 "></div>
+                <div class="smline3 "></div>
+              </div> -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <div fxFlex="3"></div>
+  </div>
+
+  <!-- <div *ngIf="hidespin " style="width: 100%;" fxLayoutAlign="center center">
+    <mat-spinner style="    margin-top: -15%;" value="100"></mat-spinner>
+  </div> -->
+
+  <footer>
+
+    <div >
+
+      <div fxLayout="row" fxLayoutAlign="end end" style="width: 88%;" class="bottombox">
+        <div class="before1" fxLayout="row" style="    margin-right: 15px;" fxLayoutAlign="center center"
+          (click)="release()" *ngIf="docFulfilment==null?false:true">
+          <img class="creat" src="../../assets/images/b1.svg">
+          <span style="position: absolute !important; color: white;cursor: pointer;" (click)="release()">Release</span>
+        </div>
+        <div class="before2" fxLayout="row" style="margin-right: 15px;" fxLayoutAlign="center center"
+          *ngIf="docFulfilment=='Released'?false:docFulfilment=='Draft'?false:true" (click)="startUpload() ">
+          <img class="creat1" src="../../assets/images/b1.svg">
+          <span style="position: absolute !important; color: white;cursor: pointer;" (click)="startUpload() "
+            *ngIf="docFulfilment=='Released'?false:true">Save</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>

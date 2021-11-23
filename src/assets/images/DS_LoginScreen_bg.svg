@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0e82fb"/>
+      <stop offset="1" stop-color="#1f009e"/>
+    </linearGradient>
+    <clipPath id="clip-DS_LoginScreen_1">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="DS_LoginScreen_1" data-name="DS – LoginScreen – 1" clip-path="url(#clip-DS_LoginScreen_1)">
+    <rect width="1920" height="1080" fill="#fff"/>
+    <path id="Path_7069" data-name="Path 7069" d="M0,0H216V1932H0Z" transform="matrix(0.695, 0.719, -0.719, 0.695, 1546.756, -208.522)" fill="#0e82fb" style="mix-blend-mode: multiply;isolation: isolate"/>
+    <rect id="Rectangle_7676" data-name="Rectangle 7676" width="372" height="1881" transform="matrix(0.695, 0.719, -0.719, 0.695, 1096.187, -333.582)" fill="url(#linear-gradient)" style="mix-blend-mode: multiply;isolation: isolate"/>
+    <text id="Powered_by" data-name="Powered by" transform="translate(1452 197)" fill="#c4c4c4" font-size="16" font-family="Poppins-SemiBold, Poppins" font-weight="600" opacity="0.6"><tspan x="0" y="0">Powered by</tspan></text>
+  </g>
+</svg>

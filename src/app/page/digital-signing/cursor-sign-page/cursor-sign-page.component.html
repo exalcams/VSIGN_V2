@@ -1,0 +1,211 @@
+<div fxLayout="column" style="width: 100%;background-color: #ffffff">
+    <mat-toolbar style="background-color: #ffffff;border: none !important;">
+
+        <div fxFlex fxFill fxLayout="row" fxLayoutAlign="start center">
+            <div class=" my-8" fxFlex="1 0 auto" fxLayout="column" fxLayoutAlign="start start"
+                style="margin-top: 20px !important;">
+
+                <img style="margin-left: 10px;" src="assets/images/Group 8208.svg">
+                <span class="doc-center">Document Center : Digital Signing Using Cursor Point</span>
+            </div>
+        </div>
+    </mat-toolbar>
+    <form [formGroup]="form">
+        <div fxFlex="100" fxLayout="row">
+            <div fxFlex="2"></div>
+            <div fxFlex="20" fxLayout="column" fxLayoutGap="20px" class="leftdiv">
+                <mat-card class="card" fxLayout="column" style="flex-flow:wrap;padding: 0px;">
+                    <img class="flowr" src="../../assets/images/bluebgflowr.svg">
+                    <div fxLayout="row" fxLayoutAlign="start center" style="gap: 15px;padding-top: 10px;">
+                        <img style="padding-left: 20px;width: 50px;" src="../../assets/images/profile.svg">
+                        <label class="secuser">{{displayname}}</label>
+                        <img src="../../assets/images/Message.svg" style="cursor: pointer;"
+                            (click)="OpenRemarks('owner_rmks',DocAuthor)">
+                    </div>
+                    <div fxLayout="row">
+                        <p class="febtxt" fxFlexOffset="25">{{createdOnDate | date}}</p>
+                    </div>
+                    <div fxLayout="column" class="stepperdiv">
+
+                        <div class="container">
+
+                            <div [ngSwitch]="fulfill">
+
+                                <div fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="42px" style="position: relative;
+                              margin-left: 70px;
+                              overflow: auto;
+                              flex-direction: column;
+                              box-sizing: border-box;
+                              max-width: 100%;
+                              place-content: center space-between;
+                              align-items: center;
+                              top: 23px;">
+                                    <div *ngFor="let data of logDatas;index as i">
+
+                                        <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="5px">
+                                            <p class="last">{{i==0?'-created':
+                                                i==lengthLogData?'-completed':'signed'}}&nbsp; by</p>
+                                            <p class="names">{{data.user}}</p>
+                                            <img src="../../../assets/images/Message.svg"
+                                                (click)="OpenRemarks(data.commnets,data.user)" class="img_comments">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="position: relative;">
+
+                                    <div class="wrapper" style="top: -34px;
+                                  position: absolute;
+                                  left: 20%;" *ngSwitchCase="'Released'">
+                                        <ul class="StepProgress">
+                                            <li class="StepProgress-item is-done"><strong>Initiated </strong></li>
+
+                                            <li class="StepProgress-item current"><strong>In progress</strong></li>
+                                            <li class="StepProgress-item "><strong>Completion</strong></li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="wrapper" style="top: -110px;
+                                  left: 20%;
+                                  position: absolute;" *ngSwitchCase="'In Signing'">
+                                        <ul class="StepProgress1">
+                                            <li class="StepProgress1-item is-done"><strong>Initiated</strong></li>
+
+                                            <li class="StepProgress1-item current"><strong>In progress</strong></li>
+                                            <li class="StepProgress1-item "><strong>Completion</strong></li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="wrapper" style="position: absolute;
+                                  top: -110px;
+                                  left: 20%;" *ngSwitchCase="'Completed'">
+                                        <ul class="StepProgress2">
+                                            <li class="StepProgress2-item is-done"><strong
+                                                    style="color:  #0e82fb;">Initiated</strong></li>
+
+                                            <li class="StepProgress2-item current"><strong style="color:  #0e82fb;">In
+                                                    progress</strong></li>
+                                            <li class="StepProgress2-item "><strong
+                                                    style="color:  #0e82fb;opacity: .7;">Completion</strong></li>
+
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </mat-card>
+
+                <mat-card class="card2">
+                    <div class="Div_cls">
+                        <img class="flowr" src="../../assets/images/bluebgflowr.svg">
+                        <div class="card2head" fxLayout="row" fxLayoutGap="15px">
+                            <img class="book" src="../../assets/images/book.svg">
+                            <span style="font-size: 14px;">Selected for Signature</span>
+                        </div>
+                    </div>
+
+                    <div fxLayout="column" fxLayoutGap="10px" class="list">
+
+
+
+
+
+                        <mat-checkbox *ngFor="let fn of FileNames; let  i= index" [checked]="i==0?true:false"
+                            formArrayName="fns" (change)="updateFNS(fn,$event.checked)">
+                            <div fxLayout="column">
+                                <div fxLayout="row" fxFlex="70">
+                                    <p class="signature2" style="display: contents;" (click)="onClickFileName(i)">
+                                        {{fn.fname.substr(0,7) + '...' + fn.fname.substr(-7)}}</p>
+                                </div>
+
+                                <div fxLayout="row" fxFlex="10" class="txt_inp1">
+                                    <img style="width: 20px;height: 20px; position: relative;
+                                      left: 10px;" (click)="onClickDownload(i)"
+                                        src="../../assets/vsignsvgs/cloud-computing.svg">
+                                </div>
+
+                            </div>
+
+                        </mat-checkbox>
+
+                    </div>
+
+                </mat-card>
+            </div>
+
+            <div fxFlex="5" class="vldiv">
+                <div class="vl"></div>
+            </div>
+
+            <div fxFlex="48" style="overflow: auto;">
+
+                <div class="pdfcontainer">
+                    <div *ngIf="hidespin" style="align-self: center;">
+                        <mat-progress-spinner class="example-margin" [color]="color" [mode]="modespin" [value]="value">
+                        </mat-progress-spinner>
+                       
+                    </div>
+                    <!-- <img *ngIf="!hidespin" [src]="imgSrc"> -->
+                    <canvas style="background-color: #017bfb;" #canvas (mouseup)="mouseup()"
+                    (mousemove)="mousemove($event)" (mousedown)="mousedown($event)"> </canvas>
+
+
+
+                </div>
+
+
+            </div>
+
+            <div fxFlex="5">
+                <div class="vl"></div>
+            </div>
+
+            <div fxFlex="20" fxLayout="column" fxLayoutGap="15px" class="rightdiv">
+
+
+                <mat-card fxLayout="column" class="rect" style="background-image: linear-gradient(11deg, #3f9afb 99%, #017bfb 5%);
+      font-family: poppins;">
+                    <img class="flowr2" src="../../assets/images/floweropacity.svg">
+                    <div fxLayout="row" class="rowwrong" fxLayoutGap="15px">
+                        <img class="wrong" src="../../assets/images/wrong.svg">
+                        <span>On Schedule</span>
+                    </div>
+                    <div fxLayout="column" class="signmarch" fxLayoutAlign="space-evenly stretch">
+                        <span>Signing Completion by</span>
+                        <span>{{displayDueDate | date}}</span>
+                    </div>
+                </mat-card>
+                <div class="selfsign">
+                    <p>Sign Type : Self sign</p>
+                </div>
+                <br>
+
+                <div class="pdfcontainer2">
+
+                    <div class="box2" style="cursor: pointer;margin-left: 25%;
+                  gap: 10px;" fxLayout="row" *ngIf="hideSignbutton" (click)="onCreate()" fxLayoutAlign="start center">
+                        <img src="../../assets/image/vsign/pen-alt.svg" class="doc1">
+                        <p class="doc">Sign Document</p>
+                    </div>
+
+                    <br>
+                    <button *ngFor="let imageButton of thumbnail; let  i= index" (click)="onClick(i)" class="button"
+                        style="margin-left: 16px;margin-top: 12px;">
+                        <img [src]='imageButton' style="width: 130px;height: 170px;">
+                    </button>
+                </div>
+
+            </div>
+
+            <div fxFlex="2">
+                <div class="htmldata" [innerHtml]="htmlData">
+                </div>
+            </div>
+        </div>
+        <!-- <button (click)="navi()">save</button> -->
+    </form>
+</div>

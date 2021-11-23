@@ -1,0 +1,93 @@
+.araRoot{
+    .drawer{
+        box-shadow: 2px 0 3px 0 #f7f7f7;
+        background-color: #fff;
+        border: none;
+        .logo-container{
+            padding: 12px 8px;
+            border-bottom: 1px solid #f7f7f7;
+            .logo{
+                width: 80px;
+            }
+        }
+        .menu-container{
+            padding: 4px 8px;
+            height: calc(100vh - 212px);
+            overflow-y: auto;
+            .nav-list1{
+                margin-bottom: 12px;
+            }
+            .side-heading{
+                font-size: 12px;
+                font-weight: 500;
+                color: #0d0c22;
+                margin-left: 16px;
+            }
+            .seperator{
+                border-bottom: 1px solid #f7f7f7;
+            }
+        }
+        .purchase-container{
+            font-size: 12px;
+            padding: 8px;
+            .description{
+                text-align: center;
+            }
+            .purchase-btn{
+                border: none;
+                font-size: 12px;
+                color: #26009c;
+                font-weight: 500;
+                background-color: rgb(38 0 156 / 4%);
+                padding: 8px 10px;
+                margin: 8px 0;
+            }
+        }
+        .user-panel{
+            border-radius: 4px;
+            background-color: #fcfcfc;
+            padding:8px 12px;
+            font-size: 11px;
+            color: #394256;
+            margin: 12px;
+            .user{
+                color: #394256;
+                font-weight: 500;
+                width: 100%;
+                padding: 8px;
+                .user-img{
+                    width: 24px;
+                }
+            }
+            .logout{
+                color: #394256;
+                font-weight: 500;
+                width: 100%;
+                padding: 0 8px 8px 12px;
+                cursor: pointer;
+                .logout-img{
+                    width: 14px;
+                }
+            }
+        }
+        .expand{
+            width: 100%;
+            padding:0 16px 16px;
+            margin-top: 0;
+            .exalca-container{
+                color: #acacac;
+                font-size: 8px;
+                .logo{
+                    width: 72px;
+                }
+            }
+            .expand-btn{
+                cursor: pointer;
+            }
+        }
+    }
+    .drawer-content{
+        background-color: #fff;
+        padding-left: 2px;
+    }
+}

@@ -1,0 +1,28 @@
+.popupform{
+    height: 320px;
+    width: 550px;
+    padding-bottom: 1rem;
+    display: flex;
+    border-radius: 2%;
+    justify-content: space-between;
+    align-items: center;
+}
+.upldbtn {
+    width: 150px;
+    height: 40px;
+    border: solid 1.5px #6f6f6f;
+    border-radius: 5%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.browse {
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    text-align: center;
+    /* line-height: 146px; */
+    color: #061b3d;
+}

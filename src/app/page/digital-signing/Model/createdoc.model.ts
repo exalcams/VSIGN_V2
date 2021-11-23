@@ -1,0 +1,30 @@
+export class createdoc {
+      Client:string;
+      Company:string;
+      DocId:string;
+      Title:string;
+      FinalDueDate:Date;
+      SignAadhaar:string;
+      SignCaPfx:string;
+      SignCaToken:string;
+      SignSelf:string;
+      SignCUrsor:string;
+      SignTag:string;
+      SignImage:string;
+      DistInit:string;
+      DistAll:string;
+      DistMail:string;
+      DistDms:string;
+      FileType:string;
+      FileSize:string;
+      FileExt:string;
+      FileMd5:string;
+      FileName:string;
+      LastSingedDate:string;
+      LastSignedBy:string;
+      Status:string;
+      CreatedOn:Date;
+      CreatedBy:string;
+      ModifiedOn:Date;
+      ModifiedBy:string;
+}

@@ -1,0 +1,53 @@
+<div fxLayout="column" class="dialog-content-wrapper">
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <label class="displaytext">Create Main Tag</label>
+    <img (click)="dialogRef.close()" style="cursor: pointer;" src="assets/images/Group 7779.svg">
+  </div>
+  <div style="height: 8px;">
+    <span *ngFor="let option of duplicateselecetedarray;let indexOfelement=index;">
+      <span *ngIf="indexOfelement !=0 " class="Font_Cls"> >> </span>
+      <span class="Font_cls1">{{option.Node}}</span>
+
+      <!-- <div>{{indexOfelement}}</div> -->
+    </span>
+  </div>
+
+  <div fxLayout="row" style="margin-top: 14px;">
+    <div fxFlex="40" fxLayoutAlign="center" style="height: 100%;"><img width="80%" src="assets/images/img.svg"></div>
+
+    <div fxFlex="55" fxLayout="column" fxLayoutAlign="space-between center">
+      <form [formGroup]="myForm" style="height: 200px;overflow: auto;width: 100%;">
+        <div formArrayName="arr" *ngFor="let a of myForm.get('arr')['controls']; let i = index">
+          <div fxLayout="row" [formGroupName]="i" style="margin-bottom: 2px;" >
+            <!-- <mat-form-field  appearance="outline" class="example-full-width"> -->
+            <mat-label for="Node" style="display: none;">Tag</mat-label>
+            
+            <input #a style="margin-top: 10px;" autocomplete="off" type="text" class="example-full-width"
+              aria-label="Tag" matInput name="Node" formControlName="Node" [matAutocomplete]="auto" matInput
+              placeholder="Enter Tag..." (change)="filtertag(i)">
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete>
+            <img *ngIf="i>0?true:false" width="14px" src="assets/icons/Delete.svg" style="margin-left: 10px;cursor: pointer;" (click)="removeGroup(i)">
+            <mat-icon (click)="addItem(i)" *ngIf="myForm.get('arr')['controls'].length-1==i" style="margin-left: 10px;margin-top: 10px;cursor: pointer;color: #26009c;">add</mat-icon>
+            <!-- </mat-form-field> -->
+            
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+    <!-- <div fxFlex="5">
+      <mat-icon (click)="addItem()">add</mat-icon>
+    </div> -->
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <div style="cursor: pointer;" class="Create_cls" (click)="Create()" type="submit">
+      <div fxFlex="90" fxLayoutAlign="center center">Create</div>
+      <span><img width="25px" style="float: right;margin-top: -6px;" src="assets/images/flowerblue.svg"></span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+    <g transform="translate(-733 -109)">
+        <circle cx="18" cy="18" r="18" fill="#0e82fb" opacity="0.1" transform="translate(733 109)"/>
+        <g>
+            <g>
+                <path fill="#aad540" d="M33.764 215.593h8.429v3.746h-8.429z" transform="translate(525.861 -145.756) translate(219.47 270.784) translate(-33.416 -215.245)"/>
+                <path fill="#00ba53" d="M33.764 215.593h8.429v3.746h-8.429z" transform="translate(525.861 -145.756) translate(219.47 270.784) translate(-33.416 -215.245)"/>
+                <path fill="#05863f" d="M41.4 215.593v2.482a.468.468 0 0 1-.468.468h-7.168v.8h8.429v-3.746h-.8z" transform="translate(525.861 -145.756) translate(219.47 270.784) translate(-33.416 -215.245)"/>
+                <path fill="#426572" d="M35.389 84.827a.348.348 0 0 0-.348-.348h-1.586a.348.348 0 0 0 0 .7h1.239v3.051H26.96v-3.056h4.872a.348.348 0 0 0 0-.7h-5.22a.348.348 0 0 0-.348.348v3.746a.348.348 0 0 0 .348.348h8.429a.348.348 0 0 0 .348-.348c0-1.135.008-.029 0-1.869z" transform="translate(525.861 -145.756) translate(219.47 270.784) translate(-26.265 -84.479)"/>
+            </g>
+            <g>
+                <path fill="#fff" d="M109.222 32.983h-1.713a.348.348 0 0 0-.348.348v6.255h-.99v.7h.99v6.255a.348.348 0 0 0 .348.348h1.713v-.7h-1.365V33.678h1.365z" transform="translate(525.861 -145.756) translate(228.594 264.756) translate(-106.171 -31.684)"/>
+            </g>
+        </g>
+    </g>
+</svg>

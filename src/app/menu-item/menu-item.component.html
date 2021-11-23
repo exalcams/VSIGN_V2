@@ -1,0 +1,22 @@
+<div class="menu-item" [ngClass]="{'menu-item-folded':isFolded}">
+    <div class="menu">
+        <mat-list-item [ngStyle]="{'height':depth>0?'12px':'16px'}" (click)="onItemSelected(item)" [disabled]="item.disabled"
+            [ngClass]="{'active': IsActive(), 'expanded': depth>0 && IsActive()}" class="menu-list-item" style="width: 100%;">
+            <div fxLayoutAlign="start center">
+                <img *ngIf="item.icon && IsActive()" [src]="item.icon_active" alt="route_icon" class="route-icon">
+                <img *ngIf="item.icon && !IsActive()" [src]="item.icon" alt="route_icon" class="route-icon">
+                <span class="displaytext" [ngClass]="{'displaytext1':depth>0}">{{item.displayName}}</span>
+                <span fxFlex *ngIf="item.children && item.children.length">
+                    <span fxFlex></span>
+                    <img src="assets/icons/arrow_down.svg" alt="arrow_down" class="expand-icon"
+                        [@indicatorRotate]="expanded ? 'expanded': 'collapsed'">
+                </span>
+            </div>
+        </mat-list-item>
+        
+        <div *ngIf="expanded" style="width: 100%;">
+            <app-menu-item *ngFor="let child of item.children" [item]="child" [depth]="depth+1" [isFolded]="isFolded">
+            </app-menu-item>
+        </div>
+    </div>
+</div>

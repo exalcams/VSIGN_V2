@@ -1,0 +1,546 @@
+.doc-center{
+  font-size: 26px;
+  font-weight: 500;
+  color: #1f009e !important;
+  margin-left: 10px;
+}
+.tool{
+    background-color: white;
+    height: 56px;
+    font-family: poppins !important;
+    // position: fixed;
+    // z-index: 1;
+    // top: 0;
+}
+.digisign{
+  font-size: 14px !important;
+  // font-family: poppins-semi !important;
+  font-weight: 600 !important;
+}
+body{
+  height: 100%;
+  overflow: auto;
+  font-family: poppins !important;
+  overflow: auto;
+  width: 100%;
+  // height: 610px;
+  // position: relative;
+  // top: 56px;
+}
+.back{
+    transform: scale(0.9);
+    font-weight: 500;
+    cursor: pointer;
+    line-height: 10px;
+}
+.backbtn{
+  margin: -8px 0 0 0 !important;
+}
+.vsign{
+    margin: -3px 0 0 15px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.menuimg{
+    margin: 0 0 0 15px;
+    width: 25px;
+    height: 25px;
+}
+.New{
+    margin: -3px 0 0 15px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.example-spacer{
+  flex: 1 1 auto;
+}
+.avatar{
+  position: relative;
+  right: 13px;
+  top: -3px;
+      width: 30px;
+      height: 30px;
+  }
+  .gana{
+  position: relative;
+  right: 74px;
+  top: 4px;
+      font-size: 13px;
+      font-weight: 600;
+  }
+  .settings{
+    width: 20px;
+  }
+  .mail{
+   width: 20px;
+  }
+  ::ng-deep .mat-badge-content {
+    width: 10px !important;
+    height: 10px !important;
+    font-size: 12px !important;
+    line-height: 10px !important;
+    position: relative;
+    left: -18px;
+    top: 4px;
+    background-color: #cddffd !important;
+    color: #71a1f6 !important;
+  }
+
+.arrowdrop{
+    position:relative;
+    right: 13px;
+    top: 4px;
+}
+
+  .mat-badge-medium .mat-badge-content {
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+}
+  .pdfttl{
+      font-size: 12px;
+      font-weight: 500;
+      // margin: 4px 0 0 0 !important;
+      padding-left: 8% !important;
+  }
+  .flowr{
+      width: 35px;
+      height: 35px;
+      position: absolute;
+      top: -4px;
+      right: 0;
+  }
+  .card{
+    background-color: #f7f9fd !important;
+    height: 200px;
+    font-family: poppins !important;
+  }
+  .secuser{
+      // margin: 5px 0 0 0 !important;
+      font-size: 12px;
+  }
+  .febtxt{
+    color: #1786fb;
+    font-size: 12px;
+    margin: 0px 0 0 0;
+  }
+  .img_comments {
+    width: 20px;
+    height: 20px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+.last {
+  font-size: 8px;
+  margin-top: 12px;
+}
+.names {
+  font-size: 10px;
+}
+  .pdfcontainer{
+    display: block;
+    height: 87vh;
+    overflow: auto;
+  }
+  .pdfcontainer2{
+    margin: -15px 0 0 0;
+    display: block;
+    height: 90%;
+    overflow: auto;
+    text-align: center;
+  }
+  .vl {
+    border-left: 1px solid #017bfb;
+    height: 80%;
+    opacity: 0.18;
+    position: relative;
+    left: 50%;
+    top: 20px;
+  }
+  .stepperdiv{
+      height: 205px;
+      overflow: auto;
+  }
+  .arrowdrop{
+    position:relative;
+    right: 15px;
+    top: 4px;
+}
+  .card2{
+    // background-color: rgb(4, 125, 251,0.05);
+    height: 360px;
+    font-family: poppins !important;
+    padding: 0px !important;
+    background-color: #f7f9fd !important;
+   
+  }
+  .book{
+      width:30px;
+      height: 30px;
+  }
+  .card2head > span{
+      margin: 7px 0 0 0;
+      // background-color: #b7daff !important;
+  }
+  .Div_cls{
+    background-color: #b7daff !important;
+    height: 60px;
+    padding: 15px 0px 0px 20px;
+  }
+  mat-vertical-stepper{
+  margin: 0 0 0 25px;
+  font-family: poppins !important;
+  }
+  .bluesqr{
+    width: 14px;
+    height: 14px;
+    border-radius: 4px;
+    background-color: #0e82fb;
+    margin: 0 0 0 -10px;
+  }
+
+  .download{
+    width: 18.5px;
+    height: 15.2px;
+  }
+  .forward{
+    width: 12px;
+    height: 12px;
+  }
+  .list{
+      overflow: auto;
+      height: 200px;
+      margin-top: 10px;
+      padding-left: 25px;
+     
+  }
+  .flowr2{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: -4px;
+    right: 0;
+  }
+  .rect{
+    background-image: linear-gradient(11deg, #3f9afb 99%, #017bfb 5%);
+    font-family: poppins;
+  }
+  .wrong{
+      width: 30px;
+      height: 30px;
+  }
+  .rowwrong >span{
+      font-size: 12px;
+      color: white;
+      margin: 7px 0 0 0;
+  }
+  .signmarch{
+      margin: 0 0 0 20%;
+  }
+  .selfsign{
+      text-align: center;
+      background-color: #f7f9fd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: poppins;
+  }
+  .selfsign > p{
+      font-size: 12px;
+      margin: 14px;
+  }
+  .signdocbtn{
+    background-image: linear-gradient(11deg, #3f9afb 98%, #017bfb 13%);    
+    width: 150px; 
+  }
+  .signdoctxt{
+      color: white;
+  }
+  .bottomdiv{
+    background-color: #f7f9fd;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    right:10px;
+    height: 60px;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 13px;
+  }
+  .blueflow{
+  position: relative;
+  top: -10px;
+  left: -20px;
+  }
+
+
+  .leftdiv{
+    height: 575px;
+  }
+  .rightdiv{
+    height: 520px;
+  }
+  .pen{
+    width: 18px;
+    height: 23px;
+    margin: 0 0 0 50%;
+    cursor: pointer;
+    z-index: 0;
+  }
+
+
+  .wrapper {
+    // width: 330px;
+    // font-family: 'Helvetica';
+    font-size: 14px;
+    // border: 1px solid #CCC;
+  }
+  
+  .StepProgress {
+    position: relative;
+    padding-left: 45px;
+    list-style: none;
+    
+    &::before {
+      display: inline-block;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 15px;
+      width: 10px;
+      height: 100%;
+      border-left: 2px solid #CCC;
+    }
+    
+    &-item {
+      position: relative;
+      counter-increment: list;
+      
+      &:not(:last-child) {
+        padding-bottom: 20px;
+      }
+      
+      &::before {
+        display: inline-block;
+        content: '';
+        position: absolute;
+        left: -30px;
+        height: 100%;
+        width: 10px;
+      }
+      
+      &::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: -40px;
+    width: 20px;
+    height: 20px;
+        border: 2px solid #0e82fb;
+        border-radius: 50%;
+        background-color: #FFF;
+      }
+      
+      &.is-done {
+        &::before {
+          border-left: 2px solid #0e82fb;
+        }
+        &::after {
+          content: "✔";
+          font-size: 12px;
+          color: #FFF;
+          text-align: center;
+          border: 2px solid #0e82fb;
+          background-color: #0e82fb;
+        }
+      }
+      
+      &.current {
+        &::before {
+          border-left: 2px solid #0e82fb;
+        }
+        
+        &::after {
+          content: "";
+          font-size: 10px;
+          color: #FFF;
+          text-align: center;
+          border: 2px solid #0e82fb;
+          background-color: #fff;
+        }
+      }
+    }
+    
+    strong {
+      display: block;
+    }
+  }
+
+
+  .StepProgress1 {
+    position: relative;
+    padding-left: 45px;
+    list-style: none;
+    
+    &::before {
+      display: inline-block;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 15px;
+      width: 10px;
+      height: 100%;
+      border-left: 2px solid #CCC;
+    }
+    
+    &-item {
+      position: relative;
+      counter-increment: list;
+      
+      &:not(:last-child) {
+        padding-bottom: 20px;
+      }
+      
+      &::before {
+        display: inline-block;
+        content: '';
+        position: absolute;
+        left: -30px;
+        height: 100%;
+        width: 10px;
+      }
+      
+      &::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: -40px;
+    width: 20px;
+    height: 20px;
+        border: 2px solid #0e82fb;
+        border-radius: 50%;
+        background-color: #FFF;
+      }
+      
+      &.is-done {
+        &::before {
+          border-left: 2px solid #0e82fb;
+        }
+        &::after {
+          content: "✔";
+          font-size: 12px;
+          color: #FFF;
+          text-align: center;
+          border: 2px solid #0e82fb;
+          background-color: #0e82fb;
+        }
+      }
+      
+      &.current {
+        &::before {
+          border-left: 2px solid #0e82fb;
+        }
+        
+        &::after {
+          content: "✔";
+          font-size: 12px;
+          color: #FFF;
+          text-align: center;
+          border: 2px solid #0e82fb;
+          background-color: #0e82fb;
+        }
+      }
+    }
+    
+    strong {
+      display: block;
+    }
+  }
+
+  .StepProgress2 {
+    position: relative;
+    padding-left: 45px;
+    list-style: none;
+    
+    &::before {
+      display: inline-block;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 15px;
+      width: 10px;
+      height: 100%;
+      border-left: 2px solid #CCC;
+    }
+    
+    &-item {
+      position: relative;
+      counter-increment: list;
+      
+      &:not(:last-child) {
+        padding-bottom: 20px;
+      }
+      
+      &::before {
+        display: inline-block;
+        content: '';
+        position: absolute;
+        left: -30px;
+        height: 100%;
+        width: 10px;
+      }
+      
+      &::after {
+        content: "✔";
+        display: inline-block;
+        position: absolute;
+        font-size: 12px;
+        top: 0;
+        left: -40px;
+    width: 20px;
+    color: #FFF;
+    height: 20px;
+        border: 2px solid #0e82fb;
+        border-radius: 50%;
+        background-color: #0e82fb;
+      }
+      
+      &.is-done {
+        &::before {
+          border-left: 2px solid #0e82fb;
+        }
+        &::after {
+          content: "✔";
+          font-size: 12px;
+          color: #FFF;
+          text-align: center;
+          border: 2px solid #0e82fb;
+          background-color: #0e82fb;
+        }
+      }
+      
+      &.current {
+        &::before {
+          border-left: 2px solid #0e82fb;
+        }
+        
+        &::after {
+          content: "✔";
+          font-size: 12px;
+          color: #FFF;
+          text-align: center;
+          border: 2px solid #0e82fb;
+          background-color: #0e82fb;
+        }
+        
+      }
+    }
+    
+    strong {
+      display: block;
+    }
+  }

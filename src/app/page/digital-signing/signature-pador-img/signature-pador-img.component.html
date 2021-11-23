@@ -1,0 +1,26 @@
+<div class="popupform" fxLayout="column" fxFlex="100">
+  <mat-toolbar style="background-color:#ffffff">
+      <span style="color: #202020;margin: auto;">Draw/Upload</span>
+      <img  (click)="dialogRef.close()" style="cursor: pointer;" src="assets/images/Group 7779.svg">
+  </mat-toolbar>
+  <div fxLayout="row" fxFlex="90"  style="margin-left: 3%;margin-right: 3%;width: 100%" fxLayoutAlign="space-between center">
+    <div fxFlex="70" fxLayoutGap="2px" fxLayout="column" fxLayoutAlign="center center" style=" margin-bottom: 5%;margin-top: 5%;">
+      
+        <signature-pad  [options]="signaturePadOptions" (onEndEvent)="drawComplete()" style="border: 2px solid black;width: 90%" ></signature-pad>
+      
+      <button fxLayout="row" (click)="drawclear()" style="width: 80px;height: 25px;border: solid 1.5px #6f6f6f;
+      border-radius: 5%;" fxLayoutAlign="space-around center"><img style="width: 20px;height: 20px;" src="../../assets/vsignsvgs/eraser.svg"><p>Erase</p></button>
+    </div>
+    <div fxFlex fxLayout="column" fxLayoutAlign="space-between center">
+      <input type="file" id="upload" #fileInput  style="display: none"  (change)="fileChange($event)" >
+      <button (click)="fileInput.click()" class="upldbtn"><img style="width: 20px;height: 20px;" src="../../assets/image/folder (1).svg"><p class="browse">Browse file</p></button>
+      <p *ngIf="fname!=''?true:false">{{fname | slice:0:8}}</p>
+    </div>
+  </div>
+  <div fxFlex="10"  style="width: 90%;margin-left: 3%;margin-right: 3%;"  fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="end end">
+    <button (click)="onclickCancel()" style="width: 80px;height: 25px;border: solid 1.5px #6f6f6f;
+    border-radius: 5%;" fxLayoutAlign="space-around center">Cancel</button>
+    <button (click)="onclickSubmit()" style="width: 80px;height: 25px;border: solid 1.5px #6f6f6f;
+    border-radius: 5%;background-color: rgb(61, 245, 144);" fxLayoutAlign="space-around center">Submit</button>
+  </div>
+</div>

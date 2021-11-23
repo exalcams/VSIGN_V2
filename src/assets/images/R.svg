@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+    <g transform="translate(-1458 -590)">
+        <circle cx="24" cy="24" r="24" fill="#d3d0ff" transform="translate(1458 590)"/>
+        <text fill="#06131e" font-family="Poppins-SemiBold, Poppins" font-size="16px" font-weight="600" transform="translate(1477 620)">
+            <tspan x="0" y="0">R</tspan>
+        </text>
+    </g>
+</svg>

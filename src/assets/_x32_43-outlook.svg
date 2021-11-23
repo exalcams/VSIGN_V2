@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25.53" height="24">
+    <defs>
+        <style>
+            .cls-2{fill:#fff}
+        </style>
+    </defs>
+    <g id="_x32_43-outlook" transform="translate(-26.001 -39.781)">
+        <g id="Group_8577" data-name="Group 8577" transform="translate(26.001 39.781)">
+            <path id="Path_9178" data-name="Path 9178" d="M50.733 44.582H40.361v-4a.8.8 0 0 0-.288-.616.782.782 0 0 0-.656-.169L26.652 42.2a.8.8 0 0 0-.651.786v17.6a.8.8 0 0 0 .651.786l12.765 2.4a.762.762 0 0 0 .147.014.8.8 0 0 0 .8-.8v-4h10.369a.8.8 0 0 0 .8-.8v-12.8a.8.8 0 0 0-.8-.804z" transform="translate(-26.001 -39.781)" style="fill:#0071c5"/>
+            <g id="Group_8576" data-name="Group 8576" transform="translate(14.36 6.401)">
+                <path id="Path_9179" data-name="Path 9179" class="cls-2" d="M292.793 155.112h-8.047v1.817l3.145 2.006z" transform="translate(-284.746 -155.112)"/>
+                <path id="Path_9180" data-name="Path 9180" class="cls-2" d="M288.427 174.753a.8.8 0 0 1-.918.043l-2.764-1.762v7.487h9.574v-10.365z" transform="translate(-284.746 -169.321)"/>
+            </g>
+            <path id="Path_9181" data-name="Path 9181" class="cls-2" d="M87.488 183.939c-2.2 0-3.989 2.154-3.989 4.8s1.79 4.8 3.989 4.8 3.989-2.154 3.989-4.8-1.79-4.8-3.989-4.8zm0 8c-1.32 0-2.393-1.435-2.393-3.2s1.074-3.2 2.393-3.2 2.394 1.435 2.394 3.2-1.074 3.2-2.394 3.2z" transform="translate(-80.308 -175.938)"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,41 @@
+<div class="popupform" fxLayout="column" fxFlex="100">
+    <mat-toolbar style="background-color: #ffffff;">
+        <span style="color: #202020;margin: auto;">Sign Document</span>
+        <img  (click)="dialogRef.close()" style="cursor: pointer;" src="assets/images/Group 7779.svg">
+    </mat-toolbar>
+    
+    
+    <div [formGroup]="signpopform"   style="margin-left: 3%;margin-right: 3%;width: 100% ;height: 100%;">
+
+        <div fxLayout="row">
+            <mat-radio-group aria-label="Select an option" formControlName="signMethod" fxLayout="column" fxLayoutAlign="center start" style="margin-left: 4%;margin-top: 2%;">
+               
+                    <mat-radio-button value="Screen" class="txt_sign" (click)="OpenSignaturePad()" *ngIf="sgnImg!='Yes'?false:true" >Self</mat-radio-button>
+                    <mat-radio-button value="Aadhar" class="txt_useaadhar" (click)="OpenAadhar()"  *ngIf="sgnAadhar!='Yes'?false:true">Aadhar</mat-radio-button>
+                    <mat-radio-button value="Token" class="txt_useusb" *ngIf="sgnToken!='Yes'?false:true">Token</mat-radio-button>
+                    <mat-radio-button value="Certificate" class="txt_service" *ngIf="sgnCert!='Yes'?false:true">Company Certificate</mat-radio-button>
+                    <mat-radio-button value="Self" class="txt_service" *ngIf="sgnSelf!='Yes'?false:true">VSure</mat-radio-button>
+                    <mat-radio-button value="Cursor" class="txt_useaadhar" (click)="OpenCursor()"  *ngIf="sgnCursor!='Yes'?false:true">Cursor</mat-radio-button>
+                    <mat-radio-button value="Tag" class="txt_useaadhar"  *ngIf="sgnTag!='Yes'?false:true">Tag</mat-radio-button>
+            </mat-radio-group>
+            <div fxLayout="column">
+                <div class="text_rem">Remarks</div>
+                <div fxLayout="row" fxLayoutAlign="start center" class="remarks">
+                    <textarea formControlName="remarks" class="inputfield1"></textarea>
+
+                </div>
+            </div>
+        </div>
+        <div style="margin-left: 2%;border-top: solid 2px #c3c3c3;margin-right: 2%;"></div>
+        <div>
+            <mat-radio-button value="1" class="txt_signalldoc">Sign On {{nofselected}} Documents</mat-radio-button>
+        </div>
+        <div style="margin-top: 12%;"></div>
+        <div  fxLayoutAlign="center center">
+        <div class="box2" style="cursor: pointer;" (click)="signdocument()" fxLayout="row" fxLayoutAlign="start center">
+            <img src="../../assets/image/vsign/pen-alt.svg" class="doc1">
+            <p class="doc">Sign Document</p>
+        </div>
+    </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="21.762" height="26.115" viewBox="0 0 21.762 26.115">
+    <defs>
+        <style>
+            .cls-1{fill:#fff}
+        </style>
+    </defs>
+    <g id="notification" transform="translate(-42.675)">
+        <g id="Group_1286" transform="translate(42.675)">
+            <g id="Group_1285">
+                <path id="Path_1036" d="M64.36 22.027l-1.868-3.114a9.251 9.251 0 0 1-1.319-4.759v-2.729a7.627 7.627 0 0 0-5.441-7.3V2.176a2.176 2.176 0 0 0-4.353 0v1.953a7.627 7.627 0 0 0-5.441 7.3v2.728a9.256 9.256 0 0 1-1.318 4.758l-1.868 3.114a.545.545 0 0 0 .466.825h20.675a.544.544 0 0 0 .467-.824z" class="cls-1" transform="translate(-42.675)"/>
+            </g>
+        </g>
+        <g id="Group_1288" transform="translate(50.129 23.939)">
+            <g id="Group_1287">
+                <path id="Path_1037" d="M188.815 469.333a3.786 3.786 0 0 0 6.853 0z" class="cls-1" transform="translate(-188.815 -469.333)"/>
+            </g>
+        </g>
+    </g>
+</svg>

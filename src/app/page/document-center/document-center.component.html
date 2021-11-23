@@ -1,0 +1,335 @@
+<div #documentRoot class="documentRoot" fxLayout="column" style="width: 100%;background-color: #ffffff">
+
+    <mat-toolbar style="background-color: #ffffff;border: none !important;">
+
+        <div fxFlex fxFill fxLayout="row" fxLayoutAlign="start center">
+            <div class=" my-8" fxFlex="1 0 auto" fxLayout="column" fxLayoutAlign="start start"
+                style="margin-top: 20px !important;">
+                <!-- <span class="digisign">Digital Signature</span>  -->
+                <img style="margin-left: 10px;" src="assets/images/Group 8208.svg">
+                <span class="doc-center">Document Center</span>
+            </div>
+        </div>
+
+    </mat-toolbar>
+
+    <!-- <div *ngIf="hidespin " style="width: 100%;" fxLayoutAlign="center center"> -->
+    <!-- <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type="ball-spin-clockwise" [fullScreen]="false"><p style="color: white" > Loading... </p></ngx-spinner> -->
+
+    <!-- <mat-spinner value="70"></mat-spinner> -->
+    <!-- </div> -->
+
+    <div *ngIf="!hidespin" fxLayout="column">
+        <div fxLayout="row" fxLayoutGap="20px" style="padding: 0px 25px;">
+            <div fxFlex="35" class="DashBoard_Box" fxLayoutGap="0px" style="padding: 20px;">
+                <div fxFlex="33" [ngClass]="{'tab-highlight1':activeLink=='Released'}" class="Card_1"
+                    style="padding: 10px;cursor: pointer;" (click)="ActiveLink('Released')">
+                    <div fxlayout="column">
+                        <div fxLauoutAlign="start center">
+                            <img src="assets/images/Ellipse 55.svg">
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                            <span><label class="sign_label">{{signlength1}}</label></span>
+                        </div>
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                            <span style="text-align: center;"><label class="sign_label1">Sent To
+                                    Sign</label></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div fxFlex="33" [ngClass]="{'tab-highlight3':activeLink=='In Signing'}" class="Card_3"
+                    style="padding: 10px;cursor: pointer;" (click)="ActiveLink('In Signing')">
+                    <div fxLauoutAlign="start center">
+                        <img src="assets/images/Ellipse 61.svg">
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="center center">
+                        <span><label class="sign_label2">{{signcompletelength3}}</label></span>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="center center">
+                        <span style="text-align: center;"><label class="sign_label1">In Signing</label></span>
+                    </div>
+                </div>
+                <div fxFlex="33" [ngClass]="{'tab-highlight2':activeLink=='Completed'}" class="Card_2"
+                    style="padding: 10px;cursor: pointer;" (click)="ActiveLink('Completed')">
+                    <div fxLauoutAlign="start center">
+                        <img src="assets/images/Ellipse 60.svg">
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="center center">
+                        <span><label class="sign_label3">{{signcompletelength1}}</label></span>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="center center">
+                        <span style="text-align: center;"><label class="sign_label1"> Signing
+                                Completed</label></span>
+                    </div>
+                </div>
+            </div>
+            <div fxFlex="65" fxLayout="row" fxLayoutGap="30px" class="DashBoard_Box1"
+                style="padding-left: 20px;padding-right: 20px;padding-top: 10px;">
+
+                <div fxFlex="70">
+                    <div id="chart">
+                        <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart"
+                            [yaxis]="chartOptions.yaxis" [xaxis]="chartOptions.xaxis" [stroke]="chartOptions.stroke"
+                            [tooltip]="chartOptions.tooltip" [dataLabels]="chartOptions.dataLabels"
+                            [responsive]="chartOptions.responsive" [legend]="chartOptions.legend"></apx-chart>
+                    </div>
+                </div>
+                <div fxFlex="30" fxLayout="row" fxLayoutAlign="center center">
+                    <img style="width: 80%;" src="assets/images/Image 59.png">
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- <div fxFlex="2" class="body"></div> -->
+        <div fxLayout="column" fxFlex="96" fxLayoutGap="20px" class="body" style="padding: 0px 25px;">
+
+            <!-- Second Row-->
+
+            <div fxLayout="row" class="topgap" fxLayoutGap="20px" fxLayoutAlign="space-between center"
+                style="margin-top: 0px;">
+                <div fxFlex="35">
+
+                    <div [formGroup]="form" fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="30px">
+
+                        <div fxFlex="25" style="margin-top: -20px !important;">
+
+
+
+                            <mat-form-field class="form-field" appearance="outline" style="width: 115%;
+                            font-size: 12px;">
+                                <mat-label class="label1">From Date</mat-label>
+                                <input class="input" matInput [matDatepicker]="picker1" formControlName="fromdate"
+                                    placeholder="Enter From Date" (dateChange)="DateSelected()" readonly>
+                                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                <mat-datepicker #picker1></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        <div fxFlex="25" style="margin-top: -20px !important;">
+
+                            <mat-form-field class="form-field" appearance="outline" style="width: 115%;
+                            font-size: 12px;">
+                                <mat-label class="label1">To Date</mat-label>
+                                <input class="input" matInput [matDatepicker]="picker2" formControlName="todate"
+                                    placeholder="Enter To Date" (dateChange)="DateSelected()" readonly>
+                                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                                <mat-datepicker #picker2></mat-datepicker>
+                            </mat-form-field>
+                            <div *ngIf="isDateError" class="DateError">
+                                To date should not be less than from date
+                            </div>
+                        </div>
+                        <div fxFlex="20" class="ml-44" fxlayoutAlign="start center" style="margin-top: 20px;">
+                            <button class="CREate" mat-flat-button fxLayout="row" (click)="SearchClicked()"
+                                fxLayoutAlign="center center">
+                                <span class="span"> Search </span>
+                                <img class="blueflow" src="../../assets/images/flowerblue.svg">
+                            </button>
+                            <!-- <button mat-raised-button class="SaveBtn" (click)="SearchClicked()">Search</button> -->
+                        </div>
+                    </div>
+                </div>
+
+                <nav mat-tab-nav-bar fxFlex="65" style="margin-top: 10px;">
+                    <a mat-tab-link *ngFor="let link of links" (click)="ActiveLink(activeLink=link) "
+                        [ngClass]="link === 'Create'?'Mar_cls':'none'" [active]="activeLink == link">
+                        {{link}} </a>
+
+                </nav>
+
+                <div fxFlex="10" fxLayoutAlign="end end" style="margin-top: 20px;">
+                    <div class="created" (click)="addbutton()">
+
+                        <button class="CREate" mat-flat-button fxLayout="row" fxLayoutAlign="center center">
+                            <span class="span"> Create + </span>
+                            <img class="blueflow" src="../../assets/images/flowerblue.svg">
+                        </button>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="tablescroll">
+
+                <table mat-table [dataSource]="employeesDataSource">
+
+                    <ng-container matColumnDef="title">
+                        <th mat-header-cell *matHeaderCellDef><span style="color: black;"> Title </span></th>
+                        <td mat-cell *matCellDef="let element" style="color: #596069;"> {{element.title}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="author">
+                        <th mat-header-cell *matHeaderCellDef> <span style="color: black;"> Author </span></th>
+                        <td mat-cell *matCellDef="let element" style="color: #596069;"> {{element.author}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="date">
+                        <th mat-header-cell *matHeaderCellDef><span style="color: black;">Date</span> </th>
+                        <td mat-cell *matCellDef="let element" style="color: #596069;"> {{element.createdOn | date}}
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="fulfilment">
+                        <th mat-header-cell *matHeaderCellDef> <span style="color: black;">Fulfilment</span> </th>
+                        <td mat-cell *matCellDef="let element">
+                            <ng-container *ngIf="(element.fulfilment == 'Created')||(element.fulfilment == 'Draft')">
+
+                                <mat-progress-bar class="progressone" mode="determinate" value="25">
+                                </mat-progress-bar>
+                                <span class="hider">
+                                    <span class="span1">gananathanks</span>
+                                    &nbsp;&nbsp;
+                                    {{element.fulfilment?'Created':'Draft'}}</span>
+                            </ng-container>
+                            <ng-container *ngIf="element.fulfilment == 'Released'">
+                                <mat-progress-bar class="progresstwo" mode="determinate" value="50">
+                                </mat-progress-bar>
+                                <span class="hider">
+                                    <span class="span2">gananathanks</span>
+                                    &nbsp;&nbsp;
+                                    {{element.fulfilment}}</span>
+                            </ng-container>
+                            <ng-container *ngIf="element.fulfilment == 'In Signing' || element.fulfilment == 'Signing'">
+                                <mat-progress-bar class="progressthree" mode="determinate" value="75">
+                                </mat-progress-bar>
+                                <span class="hider">
+                                    <span class="span3">gananathanks</span>
+                                    &nbsp;&nbsp;
+                                    {{element.fulfilment}}</span>
+                            </ng-container>
+
+                            <ng-container *ngIf="element.fulfilment == 'Completed'">
+                                <mat-progress-bar class="progressfour" mode="determinate" value="100">
+                                </mat-progress-bar>
+                                <span class="hider">
+                                    <span class="span4">gananathanks</span>
+                                    &nbsp;&nbsp;
+                                    {{element.fulfilment}}</span>
+                            </ng-container>
+
+
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="approver">
+                        <th mat-header-cell *matHeaderCellDef> <span style="color: black;margin-left: 40px;"> Status
+                            </span></th>
+                        <td mat-cell *matCellDef="let element"><span
+                                style="margin-left: 40px;color:#596069;">{{element.fulfilment}}</span> </td>
+                    </ng-container>
+                    <ng-container matColumnDef="signed">
+                        <th mat-header-cell *matHeaderCellDef> <span style="color: black;margin-left: 40px;"> Signed
+                            </span></th>
+                        <td mat-cell *matCellDef="let element"><span
+                                style="margin-left: 40px;color:#596069;">{{element.scount}} / {{element.tscount}}</span>
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="completeby">
+                        <th mat-header-cell *matHeaderCellDef style="padding-left: 10px;color: black;"><span
+                                class="thcomplete">Completed On</span> </th>
+                        <td mat-cell [ngStyle]="{'color': setColor(element.fulfilment,element.completeby)}"
+                            *matCellDef="let element" style="color:#596069;">{{element.completeby | date}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="remainder">
+                        <th mat-header-cell *matHeaderCellDef><span class="thaction"
+                                style="color: black;">Remainder</span> </th>
+                        <td mat-cell *matCellDef="let element" style="padding-left: 20px;">
+                            <div fxLayout="row" fxLayoutAlign="space-evenly center" style="margin-left: -68px;">
+                                <div *ngIf="element.docId===selecteddocId?hidespin1:none "
+                                    style="margin-top:-15% !important;" fxLayoutAlign="center center">
+                                    <mat-spinner diameter="20"></mat-spinner>
+                                </div>
+
+
+
+                                <mat-icon matTooltip="Send Remainder" style="color:#596069; font-size: 18px;"
+                                    *ngIf="element.fulfilment=='Released'?true:element.fulfilment=='In Signing'?true:false"
+                                    matTooltipPosition='above' class="notify" matTooltipClass="example-tooltip-red"
+                                    (click)="sendRemainder(element.client,element.company,element.docId,element.fulfilment,element.author,element.createdOn,element.completeby)">
+                                    notifications_active</mat-icon>
+                                <mat-icon *ngIf="element.fulfilment=='created'" style="color:gray; font-size: 18px;">
+                                    notifications_off</mat-icon>
+                                <mat-icon *ngIf="element.fulfilment=='In Signing'" style="color:gray; font-size: 18px;">
+                                    notifications_off</mat-icon>
+                                <mat-icon *ngIf="element.fulfilment=='Completed'" style="color:gray; font-size: 18px;">
+                                    notifications_off</mat-icon>
+
+
+                            </div>
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="action">
+                        <th mat-header-cell *matHeaderCellDef><span class="thaction" style="color: black;">Action</span>
+                        </th>
+                        <td mat-cell *matCellDef="let element">
+                            <!-- <div fxLayout="row" fxLayoutAlign="space-evenly center">
+                                <div fxLayout="row" fxFlex="90" fxLayoutAlign="center" fxLayoutGap="10px"> -->
+
+                            <img style="cursor: pointer;width:14px !important;margin-left: 10px; color:black"
+                                src="assets/images/trash.svg" matTooltip="Foreclose" (click)="onSelect(element)"
+                                matTooltipPosition='above' class="close" matTooltipClass="example-tooltip-red">
+                            <!-- <img style="cursor: pointer; src="assets/images/Created.svg"
+                                        font-size: 20px;" matTooltip="Foreclose" (click)="onSelect(element)"
+                                        matTooltipPosition='above' class="close"> -->
+                            <!-- </div> -->
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="status">
+                        <th mat-header-cell *matHeaderCellDef>
+                            <span class="thaction" style="color: black;white-space: nowrap;">Document Status</span>
+                        </th>
+                        <td mat-cell *matCellDef="let element">
+
+
+                            <img style="cursor: pointer;width:14px !important;margin-left: 31% !important; color:black"
+                                src="assets/images/Created.svg" matTooltipPosition='above' matTooltip="Document Created"
+                                matTooltipClass="example-tooltip-red"
+                                *ngIf="(element.client==curruser.ClientID)&&(element.fulfilment=='Draft'||element.fulfilment=='Released')?true:false"
+                                (click)="view(element.client,element.company,element.docId,element.fulfilment)">
+
+
+                            <img style="cursor: pointer;width:14px !important;margin-left: 31% !important; color:black"
+                                src="assets/images/Released.svg" matTooltipPosition='above'
+                                matTooltip="Document Released" matTooltipClass="example-tooltip-red"
+                                *ngIf="boolNxtsign(element)"
+                                (click)="sign(element.client,element.company,element.docId,element.fulfilment,element.author,element.createdOn,element.completeby)">
+                            <img style="cursor: pointer;width:14px !important;margin-left: 31% !important; color:black"
+                                src="assets/images/Insigning.svg" matTooltipPosition='above'
+                                matTooltip="Send for Signing" matTooltipClass="example-tooltip-red"
+                                (click)="sign(element.client,element.company,element.docId,element.fulfilment,element.author,element.createdOn,element.completeby)"
+                                *ngIf="((element.signStatus=='nxtsign')&&element.fulfilment!='Completed')?true:false">
+
+                            <img style="cursor: pointer;width:14px !important;margin-left: 31% !important; color:black"
+                                src="assets/images/Released.svg" matTooltipPosition='above'
+                                matTooltip="Signing process delayed " matTooltipClass="example-tooltip-red"
+                                *ngIf="(element.fulfilment=='Signing') "
+                                (click)="sign(element.client,element.company,element.docId,element.fulfilment,element.author,element.createdOn,element.completeby)">
+                            <mat-icon style="cursor: pointer;font-size: 18px; color:black;margin-left: 31% !important; "
+                                (click)="viewDoc(element.client,element.company,element.docId,element.fulfilment,element.author,element.createdOn,element.completeby)"
+                                matTooltipPosition='above' matTooltip="View the Document"
+                                matTooltipClass="example-tooltip-red"
+                                *ngIf="(element.signStatus=='signed' || (element.client==curruser.ClientID))&&(element.fulfilment=='In Signing' || element.fulfilment=='Completed')?true:false">
+                                visibility</mat-icon>
+
+
+                            <!-- </div> -->
+
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="employeesDisplayColumns; sticky: true"
+                        style="background-color: #f7f9fd;font-family: 'poppins-semi';font-weight: 400;"></tr>
+                    <tr mat-row *matRowDef="let row; columns: employeesDisplayColumns;"
+                        style="font-family: 'poppins-semi';"></tr>
+                </table>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>

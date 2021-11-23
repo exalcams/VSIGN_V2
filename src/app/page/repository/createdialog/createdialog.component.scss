@@ -1,0 +1,44 @@
+.Create_cls{
+    width: 25%;
+    height: 35px !important;
+    border-radius: 4px;
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    background-image: linear-gradient(256deg, #3f9afb 0%, #017bfb 100%);
+    color: #ffffff;margin-left: 135px;
+}
+.displaytext{
+    font-weight: 500;
+    font-family:'poppins-semi' !important;
+     color: #000;
+  }
+  .dialog-content-wrapper {
+    max-height: 100% !important;
+    display: flex;
+    flex-direction: column;
+  }
+  .example-full-width{
+      width: 40vh;
+      border-radius: 4px;
+  border: solid 1px #ced7e3;
+  background-color: #fff;
+  outline: none;
+  height: 30px;
+  font-family: 'poppins-semi';
+  font-size: 12px;
+  color: #acacac;
+  }
+  .Font_Cls{
+    font-weight: 500;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-family: 'poppins-semi';
+    color: #000;
+    font-size: 12px;
+}
+.Font_cls1{
+    color: #394256;
+    font-weight: 500;
+    font-family: 'poppins-semi';
+    font-size: 12px;
+}

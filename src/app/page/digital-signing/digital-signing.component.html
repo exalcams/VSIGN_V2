@@ -1,0 +1,237 @@
+<div fxLayout="column" style="width: 100%;background-color: #ffffff">
+    <mat-toolbar style="background-color: #ffffff;border: none !important;">
+
+        <div fxFlex fxFill fxLayout="row" fxLayoutAlign="start center">
+            <div class=" my-8" fxFlex="1 0 auto" fxLayout="column" fxLayoutAlign="start start"
+                style="margin-top: 20px !important;">
+                <!-- <span class="digisign">Digital Signature</span>  -->
+                <img style="margin-left: 10px;" src="assets/images/Group 8208.svg">
+                <span class="doc-center" (click)="Router()">Document Center <span class="doc-center">: Digital
+                        Signing</span> </span>
+            </div>
+        </div>
+    </mat-toolbar>
+    <form [formGroup]="form">
+        <div fxFlex="100" fxLayout="row">
+            <div fxFlex="2"></div>
+            <div fxFlex="20" fxLayout="column" fxLayoutGap="20px" class="leftdiv">
+                <mat-card class="card" fxLayout="column" style="flex-flow:wrap;padding: 0px;">
+                    <img class="flowr" src="../../assets/images/bluebgflowr.svg">
+                    <div fxLayout="row" fxLayoutAlign="start center" style="gap: 15px;padding-top: 10px;">
+                        <img style="padding-left: 20px;width: 30px;" src="../../assets/images/profile.svg">
+                        <label class="secuser">{{displayname}}</label>
+                        <img src="../../assets/images/Message.svg" style="cursor: pointer;"
+                            (click)="OpenRemarks('owner_rmks',DocAuthor)">
+                    </div>
+                    <div fxLayout="row">
+                        <p class="febtxt" fxFlexOffset="25">{{createdOnDate | date}}</p>
+                    </div>
+                    <div fxLayout="column" class="stepperdiv">
+
+                        <div class="container">
+
+                            <div [ngSwitch]="fulfill">
+
+                                <div fxLayout="column" fxLayoutAlign="space-between center" style="position: relative;
+                                margin-left: 70px;
+                                overflow: auto;
+                                flex-direction: column;
+                                box-sizing: border-box;
+                                max-width: 100%;
+                                place-content: center space-between;
+                                align-items: center;
+                                top: 14px;">
+                                    <div *ngFor="let data of logDatas;index as i">
+
+                                        <div fxLayout="row"
+                                            [ngClass]="i==0?'gapCreate':i==lengthLogData?'gapsign':'gapcompleted'"
+                                            fxLayoutAlign="start" fxLayoutGap="5px">
+                                            <p class="last">{{i==0?'-Created':
+                                                i==lengthLogData?'-Signed':'-Completed'}}&nbsp; by</p>
+                                            <p class="names">{{data.user}}</p>
+                                            <img src="../../../assets/images/Message.svg"
+                                                (click)="OpenRemarks(data.commnets,data.user)" class="img_comments">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="position: relative;">
+                                    <!-- <div class="pgr" *ngSwitchCase="'Draft'">
+                                        <ul class="progressbar3">
+                                            <li class="active3" style="color: #c9c6c6;"></li>
+                                            <li class="ASN4" style="color: #c9c6c6;"></li>
+                                            <li class="Completed4" style="color: #c9c6c6;"></li>
+                                        </ul>
+                                    </div> -->
+                                    <div class="wrapper" style="top: -70px;
+                                    position: absolute;
+                                    left: 20%;margin-top: -13px;" *ngSwitchCase="'Released'">
+                                        <ul class="StepProgress">
+                                            <li class="StepProgress-item is-done"><strong>Initiated </strong></li>
+                                            <!-- <li class="StepProgress-item is-done"><strong>-completed by</strong>
+                                                Got more entries
+                                            </li> -->
+                                            <li class="StepProgress-item current"><strong>In progress</strong></li>
+                                            <li class="StepProgress-item "><strong>Completion</strong></li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="wrapper" style="top: -120px;
+                                    left: 20%;
+                                    position: absolute;margin-top: -13px;" *ngSwitchCase="'In Signing'">
+                                        <ul class="StepProgress1">
+                                            <li class="StepProgress1-item is-done"><strong>Initiated</strong></li>
+                                            <!-- <li class="StepProgress-item is-done"><strong>-completed by</strong>
+                                                Got more entries
+                                            </li> -->
+                                            <li class="StepProgress1-item current"><strong>In progress</strong></li>
+                                            <li class="StepProgress1-item "><strong>Completion</strong></li>
+
+                                        </ul>
+                                    </div>
+                                    <div class="wrapper" style="position: absolute;
+                                    top: -135px;
+                                    left: 20%;margin-top: -13px;" *ngSwitchCase="'Completed'">
+                                        <ul class="StepProgress2">
+                                            <li class="StepProgress2-item is-done"><strong
+                                                    style="color:  #0e82fb;">Initiated</strong></li>
+                                            <!-- <li class="StepProgress-item is-done"><strong>-completed by</strong>
+                                                Got more entries
+                                            </li> -->
+                                            <li class="StepProgress2-item current"><strong style="color:  #0e82fb;">In
+                                                    progress</strong></li>
+                                            <li class="StepProgress2-item "><strong
+                                                    style="color:  #0e82fb;opacity: .7;">Completion</strong></li>
+
+                                        </ul>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </mat-card>
+
+                <mat-card class="card2">
+                    <div class="Div_cls">
+                        <img class="flowr" src="../../assets/images/bluebgflowr.svg">
+                        <div class="card2head" fxLayout="row" fxLayoutGap="15px">
+                            <img class="book" src="../../assets/images/book.svg">
+                            <span style="font-size: 14px;">Selected for Signature</span>
+                        </div>
+                    </div>
+                    <!-- <div class="bluesqr"></div> -->
+                    <div fxLayout="column" fxLayoutGap="10px" class="list">
+
+
+
+                        <!-- <div fxLayout="column" fxLayoutGap="5px"  fxLayoutAlign="center center"> -->
+
+
+                        <mat-checkbox *ngFor="let fn of FileNames; let  i= index" [checked]="i==0?true:false"
+                            formArrayName="fns" (change)="updateFNS(fn,$event.checked)" color="primary">
+                            <div fxLayout="row" fxLayoutAlign="space-between center">
+                                <div fxLayout="row" fxFlex="70">
+                                    <p class="signature2" style="display: contents;font-family: 'poppins-semi';color:#acacac" (click)="onClickFileName(i)">
+                                        {{fn.fname.substr(0,7) + '...' + fn.fname.substr(-7) }}</p>
+                                </div>
+
+                                <div fxLayout="row" fxFlex="10" class="txt_inp1">
+                                    <img style="width: 20px;height: 20px; position: relative;
+                                        left: 10px;" (click)="onClickDownload(i)"
+                                        src="../../assets/vsignsvgs/cloud-computing.svg">
+                                </div>
+                                <!-- <p class="Pages1">8 Pages &nbsp;&nbsp;:&nbsp;&nbsp; 230 KB &nbsp;&nbsp;:&nbsp;&nbsp; PDF</p> -->
+
+                            </div>
+                        </mat-checkbox>
+                        <!-- </div> -->
+
+                    </div>
+
+                </mat-card>
+            </div>
+
+            <div fxFlex="5" class="vldiv">
+                <div class="vl"></div>
+            </div>
+
+            <div fxFlex="48" style="overflow: auto;">
+                <!-- afrin -->
+                <!-- <div  fxLayoutAlign="end center">
+                    <img width="25px" style="cursor: pointer;" src="assets/images/zoomin.png" (click)="zoomin()">
+                    <img width="25px" style="cursor: pointer;" src="assets/images/zoomout.png" (click)="zoomout()">
+                </div> -->
+                <div class="pdfcontainer">
+                    <!-- <iframe  style="width:100%;height:100%;" [src]="imgSrc"></iframe> -->
+                    <pdf-viewer [render-text]="true" style="width: 100%; height: 500px" [src]="imgSrc" [original-size]="false"></pdf-viewer>
+                    <!-- <ngx-extended-pdf-viewer [base64Src]="src" ></ngx-extended-pdf-viewer> -->
+                    <!-- <div *ngIf="hidespin" style="align-self: center;">
+                        <mat-progress-spinner class="example-margin" [color]="color" [mode]="modespin" [value]="value">
+                        </mat-progress-spinner>
+                    </div>
+
+                    <img style="height: auto;cursor: grab;overflow: auto;" id="image_pdf" *ngIf="!hidespin"
+                        [src]="imgSrc"> -->
+                    <!-- <iframe *ngIf="!hidespin" [src]="AttachmentData"></iframe> -->
+                </div>
+                <!-- <div *ngIf="isProgressBarVisibile" fxLayoutAlign="center center"
+                    style="align-self: center;    margin-top: -20%;">
+                    <mat-progress-spinner class="example-margin" [color]="color" [mode]="modespin" [value]="value">
+                    </mat-progress-spinner>
+                </div> -->
+
+            </div>
+
+            <div fxFlex="5">
+                <div class="vl"></div>
+            </div>
+
+            <div fxFlex="20" fxLayout="column" fxLayoutGap="15px" class="rightdiv">
+
+                <!-- afrin -->
+                <mat-card fxLayout="column" class="rect" style="background-image: linear-gradient(11deg, #3f9afb 99%, #017bfb 5%);
+        font-family: poppins;">
+                    <img class="flowr2" src="../../assets/images/floweropacity.svg">
+                    <div fxLayout="row" class="rowwrong" fxLayoutGap="15px">
+                        <img class="wrong" src="../../assets/images/wrong.svg">
+                        <span class="Font_cls">On Schedule</span>
+                    </div>
+                    <div fxLayout="column" class="signmarch" fxLayoutAlign="space-evenly stretch">
+                        <span >Signing Completion On</span>
+                        <span>{{displayDueDate | date}}</span>
+                    </div>
+                </mat-card>
+                <div class="selfsign">
+                    <p>Sign Type : Self sign</p>
+                </div>
+                <br>
+                <div class="pdfcontainer2">
+                    <!-- <img class="pen" *ngIf="hideSignbutton" (click)="onCreate()" src="../../assets/images/pen.ico"> -->
+                    <div class="box2" style="cursor: pointer;margin-left: 25%;
+                    gap: 10px;" fxLayout="row" *ngIf="hideSignbutton" (click)="onCreate()"
+                        fxLayoutAlign="start center">
+                        <img src="../../assets/image/vsign/pen-alt.svg" class="doc1">
+                        <p class="doc">Sign Document</p>
+                    </div>
+
+                    <br>
+                    <!-- <div *ngIf="hidespin" style="align-self: center;">
+                        <mat-spinner ></mat-spinner>
+                    </div> -->
+                    <pdf-viewer [render-text]="true" style="width: 60%; height: 200px" [src]="imgSrc" [original-size]="false"></pdf-viewer>
+                    <!-- <pdf-viewer [src]="imgSrc" [show-borders]="true" [zoom]="0.3" [original-size]="false"></pdf-viewer> -->
+                </div>
+                <!-- <div class="bottomdiv" fxLayout="row" fxLayoutAlign="center center">
+                <button mat-flat-button class="signdocbtn"><span class="signdoctxt">Sign Document</span></button>
+                <img class="blueflow" src="../../assets/images/flowerblue.svg">
+            </div> -->
+            </div>
+
+
+            <div fxFlex="2"></div>
+        </div>
+    </form>
+</div>

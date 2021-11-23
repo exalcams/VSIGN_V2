@@ -1,0 +1,24 @@
+
+<div style="width: 300px;
+height: 200px;">
+<form [formGroup]="form" style="margin-left: 50px;
+margin-top: 15px;">
+
+<mat-checkbox *ngFor="let fn of FileNames; let  i= index" [checked]="i==0?true:false"
+formArrayName="fns" (change)="updateFNS(fn,$event.checked)">
+
+        <p class="signature2" (click)="onClickFileName(i)">{{fn.fname.substr(0,7) + '...' + fn.fname.substr(-7) }}</p>
+  
+
+        <!-- <button style="margin-top:40px;margin-left:120px" (click)="uploadFile(fn)" [disabled]="!fn">Upload File</button> -->
+    
+
+</mat-checkbox>
+
+<br>
+<br>
+<br>
+<button mat-raised-button style="margin-top:40px;margin-left:120px" (click)="upload()">submit</button>
+</form>
+<!-- <button mat-raised-button (click)="submit()">submit</button> -->
+</div>
